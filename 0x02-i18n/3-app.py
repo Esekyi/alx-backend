@@ -27,7 +27,9 @@ def get_locale() -> Union[str, None]:
 @app.route('/', strict_slashes=False)
 def index() -> str:
     """Return an html file"""
-    return render_template('3-index.html')
+    return render_template('3-index.html',
+                           title=gettext("home_title"),
+                           header=gettext("home_header"))
 
 
 if __name__ == '__main__':
