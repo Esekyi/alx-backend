@@ -20,5 +20,11 @@ app.config.from_object(Config)
 babel = Babel(app, default_locale='en', default_timezone='UTC',)
 
 
+@app.route('/', strict_slashes=False)
+def index() -> str:
+    """Return an html file"""
+    return render_template('1-index.html')
+
+
 if __name__ == '__main__':
     app.run()
