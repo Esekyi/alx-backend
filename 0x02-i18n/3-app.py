@@ -32,7 +32,7 @@ def index() -> str:
     Uses the gettext function (imported as _) to translate
     `home_title` and `home_header` message IDs based on the selected locale.
     These translations are dynamically set in the HTML template.
-    
+
     Returns:
         str: The rendered HTML for the index page.
     """
