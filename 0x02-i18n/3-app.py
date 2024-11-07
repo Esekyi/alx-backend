@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Parametrize templates"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettext
+from flask_babel import Babel, _
 from typing import Union
 
 
@@ -9,7 +9,7 @@ class Config:
     """Config app class"""
 
     LANGUAGES = ["en", "fr"]
-    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_LOCALE = "fr"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
@@ -28,8 +28,8 @@ def get_locale() -> Union[str, None]:
 def index() -> str:
     """Return an html file"""
     return render_template('3-index.html',
-                           title=gettext("home_title"),
-                           header=gettext("home_header"))
+                           title=_("home_title"),
+                           header=_("home_header"))
 
 
 if __name__ == '__main__':
