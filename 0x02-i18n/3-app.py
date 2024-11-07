@@ -26,7 +26,16 @@ def get_locale() -> Union[str, None]:
 
 @app.route('/', strict_slashes=False)
 def index() -> str:
-    """Return an html file and parametrize it"""
+    """
+    Render the main index page with parametrized content for title and header.
+
+    Uses the gettext function (imported as _) to translate
+    `home_title` and `home_header` message IDs based on the selected locale.
+    These translations are dynamically set in the HTML template.
+    
+    Returns:
+        str: The rendered HTML for the index page.
+    """
     return render_template('3-index.html',
                            title=_("home_title"),
                            header=_("home_header"))
