@@ -4,6 +4,8 @@ from flask import Flask, render_template, request
 from flask_babel import Babel, _
 from typing import Union
 
+_.__doc__ = "Alias for `gettext`, used to mark strings for translation."
+
 
 class Config:
     """Config app class with default babel values."""
