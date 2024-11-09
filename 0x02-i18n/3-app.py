@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Parametrize templates part 1"""
+"""Parametrize templates part 1."""
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
 from typing import Union
 
 
 class Config:
-    """Config app class with default babel values"""
+    """Config app class with default babel values."""
 
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -20,7 +20,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> Union[str, None]:
-    """Get locale language from a request"""
+    """Get locale language from a request."""
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 

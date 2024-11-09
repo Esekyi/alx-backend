@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
-"""
-Parametrize templates part 1
-"""
+"""Parametrize templates part 1."""
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
 from typing import Union
 
 
 class Config:
-    """
-    Config app class with default babel values
-    """
+    """Config app class with default babel values."""
 
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -32,7 +28,6 @@ def get_locale() -> Union[str, None]:
     otherwise, defaults to the client's
     preferred language based on 'Accept-Language' headers.
     """
-
     locale = request.args.get('locale')
     if locale in app.config["LANGUAGES"]:
         return locale
@@ -50,7 +45,6 @@ def index() -> str:
     Returns:
         str: The rendered HTML for the index page.
     """
-
     return render_template('4-index.html',
                            title=_("home_title"),
                            header=_("home_header"))
